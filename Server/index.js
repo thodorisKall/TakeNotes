@@ -16,6 +16,24 @@ app.use(cors())
 const port = 8080
 // --------------------------------
 
+app.get("/notes", (req, res) => {
+  const q = "SELECT * FROM notes"
+  pool.query(q, (err, results) => {
+    if (err) console.log(err.message)
+    return res.json(results)
+  })
+})
+
+app.post("/notes", (req, res) => {
+  const q =
+    "INSERT INTO notes (title,text,date_edited,time_edited) VALUES (?,?,CURDATE(),CURTIME())"
+  const { title, text } = req.body
+  pool.query(q, [title, text], (err, results) => {
+    if (err) console.log(`Error creating new Notes ${err.message}`)
+    return res.json(results)
+  })
+})
+
 // --------------------------------
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`)
