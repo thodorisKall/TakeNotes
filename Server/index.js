@@ -34,6 +34,15 @@ app.post("/notes", (req, res) => {
   })
 })
 
+app.delete("/notes/:id", (req, res) => {
+  const q = "DELETE FROM notes WHERE id= ?"
+  const noteId = req.params.id
+  pool.query(q, [noteId], (err, results) => {
+    if (err) console.log(`Error deleting Notes ${err.message}`)
+    console.log(`Note ${noteId} deleted`)
+  })
+})
+
 // --------------------------------
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`)
