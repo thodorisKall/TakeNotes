@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import Recent from "./Recent"
 
 const Notes = () => {
@@ -35,12 +36,14 @@ const Notes = () => {
           {notes.map((note) => {
             return (
               <div className='note_box' key={note.id}>
-                <h2>{note.title}</h2>
-                <p>{note.text}</p>
-                <h4>{note.date_edited}</h4>
-                <h4>{note.time_edited}</h4>
-                <button onClick={() => handleDelete(note.id)}>Delete</button>
-                <p>---------</p>
+                <Link to={`/notes/${note.id}`}>
+                  <h2>{note.title}</h2>
+                  <p>{note.text}</p>
+                  <h4>{note.date_edited}</h4>
+                  <h4>{note.time_edited}</h4>
+                  <button onClick={() => handleDelete(note.id)}>Delete</button>
+                  <p>---------</p>
+                </Link>
                 <br />
               </div>
             )
