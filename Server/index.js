@@ -24,6 +24,14 @@ app.get("/notes", (req, res) => {
   })
 })
 
+app.get("/notes/recent", (req, res) => {
+  const q = "SELECT * FROM notes ORDER BY id DESC LIMIT 4"
+  pool.query(q, (err, results) => {
+    if (err) console.log(err.message)
+    return res.json(results)
+  })
+})
+
 app.post("/notes", (req, res) => {
   const q =
     "INSERT INTO notes (title,text,date_edited,time_edited) VALUES (?,?,CURDATE(),CURTIME())"
