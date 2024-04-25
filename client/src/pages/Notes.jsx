@@ -13,6 +13,15 @@ const Notes = () => {
     }
   }
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/notes/${id}`)
+      window.location.reload()
+    } catch (err) {
+      if (err) console.log(`Error deleting notes from Client: ${err.message}`)
+    }
+  }
+
   useEffect(() => {
     fetchAllNotes()
   }, [])
@@ -29,6 +38,7 @@ const Notes = () => {
                 <p>{note.text}</p>
                 <h4>{note.date_edited}</h4>
                 <h4>{note.time_edited}</h4>
+                <button onClick={() => handleDelete(note.id)}>Delete</button>
                 <p>---------</p>
                 <br />
               </div>
