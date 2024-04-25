@@ -2,6 +2,7 @@ import "./App.css"
 import Notes from "./pages/Notes"
 import Nav from "./pages/Nav"
 import Add from "./pages/Add"
+import SingleNote from "./pages/SingleNote"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path='/notes' element={<Notes />} />
           <Route path='/add' element={<Add />} />
-          {/* <Route path="/users" element={<Users />} / */}
+          <Route path='/notes/*' element={<SingleNote />} />
         </Routes>
       </BrowserRouter>
     </div>
