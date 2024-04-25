@@ -32,6 +32,15 @@ app.get("/notes/recent", (req, res) => {
   })
 })
 
+app.get("/notes/:id", (req, res) => {
+  const q = "SELECT * FROM notes WHERE id =?"
+  const noteId = req.params.id
+  pool.query(q, [noteId], (err, results) => {
+    if (err) console.log(`Error Displaying Note: ${err.message}`)
+    res.json(results)
+  })
+})
+
 app.post("/notes", (req, res) => {
   const q =
     "INSERT INTO notes (title,text,date_edited,time_edited) VALUES (?,?,CURDATE(),CURTIME())"
