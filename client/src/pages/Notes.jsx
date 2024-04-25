@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { useState, useEffect } from "react"
+import Recent from "./Recent"
 
 const Notes = () => {
   const [notes, setNotes] = useState([])
@@ -46,6 +47,7 @@ const Notes = () => {
           })}
         </div>
       </section>
+      <Recent />
     </main>
   )
 }
