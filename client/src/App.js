@@ -5,9 +5,11 @@ import Add from "./pages/Add"
 import SingleNote from "./pages/SingleNote"
 import Update from "./pages/Update"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import "./style.css"
+
 function App() {
   return (
-    <div className='App'>
+    <div className='my_root'>
       <BrowserRouter>
         <Nav />
         <Routes>

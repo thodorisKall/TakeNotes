@@ -19,15 +19,14 @@ const Recent = () => {
   }, [])
 
   return (
-    <section>
-      <h2>Latest Notes</h2>
-      <div>
+    <section className='recent'>
+      <h3>Recent Notes</h3>
+      <div className='recent_container'>
         {notes.map((note) => {
           return (
-            <div key={note.id}>
+            <div className='recent_box' key={note.id}>
               <h4>{note.title}</h4>
               <h4>{note.text}</h4>
-              <p>----</p>
             </div>
           )
         })}
