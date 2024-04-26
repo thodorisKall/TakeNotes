@@ -1,11 +1,11 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 const SingleNote = () => {
   const [singleNote, setSingleNote] = useState({})
   const currentPath = window.location.pathname.split("/")[2]
-  console.log(currentPath)
 
   useEffect(() => {
     const fetchSingleNote = async () => {
@@ -15,7 +15,6 @@ const SingleNote = () => {
         )
 
         setSingleNote(note.data[0])
-        console.log(note)
       } catch (err) {
         if (err)
           console.log(`Error fetching Note ${currentPath}) ${err.message} `)
@@ -24,12 +23,10 @@ const SingleNote = () => {
     fetchSingleNote()
   }, [currentPath])
 
-  console.log(singleNote)
-
   return (
-    <div>
+    <section>
       <h2>Single Note</h2>
-      <section>
+      <div>
         {singleNote && (
           <div>
             <h3>Test</h3>
@@ -37,10 +34,13 @@ const SingleNote = () => {
             <p>{singleNote.text}</p>
             <h4>{singleNote.date_edited}</h4>
             <h4>{singleNote.time_edited}</h4>
+            <button>
+              <Link to={`/update/${singleNote.id}`}>Edit</Link>
+            </button>
           </div>
         )}
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 
