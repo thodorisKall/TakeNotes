@@ -3,6 +3,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Recent from "./Recent"
+// import "../style.css"
 
 const Notes = () => {
   const [notes, setNotes] = useState([])
@@ -30,19 +31,20 @@ const Notes = () => {
 
   return (
     <main>
-      <h1>Notes</h1>
-      <section>
-        <div>
+      {/* <h1>Notes</h1> */}
+      <Recent className='recent_grid' />
+
+      <section className='notes'>
+        <div className='notes_container'>
           {notes.map((note) => {
             return (
-              <div className='note_box' key={note.id}>
+              <div className='notes_box' key={note.id}>
                 <Link to={`/notes/${note.id}`}>
                   <h2>{note.title}</h2>
                   <p>{note.text}</p>
-                  <h4>{note.date_edited}</h4>
-                  <h4>{note.time_edited}</h4>
+                  <h4>{note.date_edited.slice(0, 10)}</h4>
+                  <h4>{note.time_edited.slice(0, 5)}</h4>
                   <button onClick={() => handleDelete(note.id)}>Delete</button>
-                  <p>---------</p>
                 </Link>
                 <br />
               </div>
@@ -50,7 +52,6 @@ const Notes = () => {
           })}
         </div>
       </section>
-      <Recent />
     </main>
   )
 }

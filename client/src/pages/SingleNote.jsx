@@ -24,7 +24,7 @@ const SingleNote = () => {
   }, [currentPath])
 
   return (
-    <section>
+    <section className='single'>
       <h2>Single Note</h2>
       <div>
         {singleNote && (
@@ -32,8 +32,8 @@ const SingleNote = () => {
             <h3>Test</h3>
             <h2>{singleNote.title}</h2>
             <p>{singleNote.text}</p>
-            <h4>{singleNote.date_edited}</h4>
-            <h4>{singleNote.time_edited}</h4>
+            <h4>{singleNote.date_edited.slice(0, 10)}</h4>
+            <h4>{singleNote.time_edited.slice(0, 5)}</h4>
             <button>
               <Link to={`/update/${singleNote.id}`}>Edit</Link>
             </button>
