@@ -60,6 +60,18 @@ app.delete("/notes/:id", (req, res) => {
   })
 })
 
+app.put("/notes/update/:id", (req, res) => {
+  const q =
+    "UPDATE notes SET title=?, text=?, date_edited=CURDATE(), date_edited=CURTIME() WHERE id= ?"
+  const values = [req.body.title, req.body.text]
+  const noteId = req.params.id
+  pool.query(q, [...values, noteId], (err, results) => {
+    if (err)
+      console.log(`Error updating note ${noteId} Server Error: ${err.message}`)
+    return console.log(`Note ${noteId} Updated successfully `)
+  })
+})
+
 // --------------------------------
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`)
