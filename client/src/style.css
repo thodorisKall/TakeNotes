@@ -9,9 +9,11 @@
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: #333333;
 }
 
 main {
+  padding: 1rem 2rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr;
@@ -29,6 +31,19 @@ main .notes_container {
 main .notes_box {
   width: -moz-fit-content;
   width: fit-content;
+  background-color: #f4c430;
+  border-radius: 20px;
+  padding: 1rem 0.8rem;
+}
+main .notes_box h2,
+main .notes_box h4,
+main .notes_box p {
+  color: #f5f5f5;
+  margin-bottom: 5px;
+}
+main .notes_box .notes_datetime {
+  display: flex;
+  justify-content: space-between;
 }
 
 .recent_container {
@@ -45,4 +60,30 @@ main .notes_box {
 nav {
   display: flex;
   align-items: center;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #808080;
+}
+nav h1 {
+  color: #f5f5f5;
+  font-size: 2rem;
+}
+nav .nav_buttons a {
+  text-decoration: none;
+}
+nav .nav_buttons button {
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #48d1cc;
+}
+nav .nav_buttons a:hover {
+  color: #f5f5f5;
+}
+nav .nav_buttons #home_btn {
+  margin-right: 4rem;
+}
+nav .nav_buttons #create_btn {
+  background-color: #48d1cc;
 }/*# sourceMappingURL=style.css.map */
