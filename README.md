@@ -1,4 +1,4 @@
-# Project Readme
+# TakeNotes web app
 
 ## 1. Goal of the Project:
 
