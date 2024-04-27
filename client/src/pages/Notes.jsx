@@ -42,8 +42,10 @@ const Notes = () => {
                 <Link to={`/notes/${note.id}`}>
                   <h2>{note.title}</h2>
                   <p>{note.text}</p>
-                  <h4>{note.date_edited.slice(0, 10)}</h4>
-                  <h4>{note.time_edited.slice(0, 5)}</h4>
+                  <div className='notes_datetime'>
+                    <h4>{note.date_edited.slice(0, 10)}</h4>
+                    <h4>{note.time_edited.slice(0, 5)}</h4>
+                  </div>
                   <button onClick={() => handleDelete(note.id)}>Delete</button>
                 </Link>
                 <br />
