@@ -27,9 +27,9 @@ const Add = () => {
   }
 
   return (
-    <section>
+    <section className='add'>
       <h2>Add new Note</h2>
-      <form>
+      <form className='add_form'>
         <input
           type='text'
           placeholder='title of your Note'
@@ -42,8 +42,10 @@ const Add = () => {
           onChange={handleChange}
           name='text'
         />
+        <button onClick={handleAdd} id='save_btn'>
+          Save
+        </button>
       </form>
-      <button onClick={handleAdd}>Save</button>
     </section>
   )
 }
