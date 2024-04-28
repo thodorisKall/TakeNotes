@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import { FaEdit } from "react-icons/fa"
 
 const SingleNote = () => {
   const [singleNote, setSingleNote] = useState({})
@@ -25,25 +26,26 @@ const SingleNote = () => {
 
   return (
     <section className='single'>
-      <h2>Single Note</h2>
-      <div>
-        {singleNote && (
-          <div>
-            <h3>Test</h3>
-            <h2>{singleNote.title}</h2>
-            <p>{singleNote.text}</p>
+      {singleNote && (
+        <div className='single_container'>
+          <h2>{singleNote.title}</h2>
+          <p>{singleNote.text}</p>
+          <div className='single_datetime'>
             {singleNote.date_edited && (
               <h4>{singleNote.date_edited.substring(0, 10)}</h4>
             )}
             {singleNote.time_edited && (
               <h4>{singleNote.time_edited.substring(0, 5)}</h4>
             )}
-            <button>
-              <Link to={`/update/${singleNote.id}`}>Edit</Link>
-            </button>
           </div>
-        )}
-      </div>
+
+          <button id='edit_btn'>
+            <Link to={`/update/${singleNote.id}`}>
+              <FaEdit />
+            </Link>
+          </button>
+        </div>
+      )}
     </section>
   )
 }
