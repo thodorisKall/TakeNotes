@@ -108,19 +108,24 @@ nav .nav_buttons #create_btn {
   background-color: #48d1cc;
 }
 
-.add {
+.add,
+.update {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
   padding: 2rem;
 }
-.add h2 {
+.add h2,
+.update h2 {
   font-size: 2rem;
   margin-bottom: 3rem;
   color: #808080;
 }
-.add .add_form {
+.add .add_form,
+.add .update_form,
+.update .add_form,
+.update .update_form {
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -128,21 +133,36 @@ nav .nav_buttons #create_btn {
   width: 40%;
 }
 .add .add_form input,
-.add .add_form textarea {
+.add .add_form textarea,
+.add .update_form input,
+.add .update_form textarea,
+.update .add_form input,
+.update .add_form textarea,
+.update .update_form input,
+.update .update_form textarea {
   width: 100%;
-  padding-left: 15px;
+  padding: 15px;
   border-radius: 10px;
 }
-.add .add_form input {
+.add .add_form input,
+.add .update_form input,
+.update .add_form input,
+.update .update_form input {
   height: 10%;
   margin-bottom: 1rem;
 }
-.add .add_form textarea {
+.add .add_form textarea,
+.add .update_form textarea,
+.update .add_form textarea,
+.update .update_form textarea {
   height: 40%;
   padding-top: 10px;
   margin-bottom: 2rem;
 }
-.add #save_btn {
+.add .button_style, .add #update_btn, .add #save_btn,
+.update .button_style,
+.update #update_btn,
+.update #save_btn {
   color: #f5f5f5;
   text-decoration: none;
   border: none;
@@ -150,10 +170,20 @@ nav .nav_buttons #create_btn {
   width: 20%;
   font-size: 1rem;
   border-radius: 10px;
+}
+.add #save_btn,
+.update #save_btn {
   background-color: #002395;
 }
-.add #save_btn:hover {
+.add #save_btn:hover,
+.add #update_btn:hover,
+.update #save_btn:hover,
+.update #update_btn:hover {
   cursor: pointer;
   font-weight: bold;
   box-shadow: #808080 0px 2px 8px 0px;
+}
+.add #update_btn,
+.update #update_btn {
+  background-color: #3cb371;
 }/*# sourceMappingURL=style.css.map */

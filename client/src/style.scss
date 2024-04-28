@@ -125,8 +125,9 @@ nav {
   }
 }
 
-// Add
-.add {
+// Add + Update
+.add,
+.update {
   //border: 2px solid red;
   display: flex;
   flex-direction: column;
@@ -140,7 +141,8 @@ nav {
     color: $grey;
   }
 
-  .add_form {
+  .add_form,
+  .update_form {
     // border: 1px solid red;
     height: 90%;
     display: flex;
@@ -151,7 +153,7 @@ nav {
     input,
     textarea {
       width: 100%;
-      padding-left: 15px;
+      padding: 15px;
       border-radius: 10px;
     }
 
@@ -167,7 +169,7 @@ nav {
     }
   }
 
-  #save_btn {
+  .button_style {
     color: $white;
     text-decoration: none;
     border: none;
@@ -175,12 +177,22 @@ nav {
     width: 20%;
     font-size: 1rem;
     border-radius: 10px;
+  }
+
+  #save_btn {
+    @extend .button_style;
     background-color: $navy;
   }
 
-  #save_btn:hover {
+  #save_btn:hover,
+  #update_btn:hover {
     cursor: pointer;
     font-weight: bold;
     box-shadow: $grey 0px 2px 8px 0px;
+  }
+
+  #update_btn {
+    @extend .button_style;
+    background-color: $green;
   }
 }
