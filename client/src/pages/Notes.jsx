@@ -3,7 +3,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Recent from "./Recent"
-// import "../style.css"
+import { RiDeleteBin5Line } from "react-icons/ri"
 
 const Notes = () => {
   const [notes, setNotes] = useState([])
@@ -46,7 +46,9 @@ const Notes = () => {
                     <h4>{note.date_edited.slice(0, 10)}</h4>
                     <h4>{note.time_edited.slice(0, 5)}</h4>
                   </div>
-                  <button onClick={() => handleDelete(note.id)}>Delete</button>
+                  <button onClick={() => handleDelete(note.id)} id='delete_btn'>
+                    <RiDeleteBin5Line />
+                  </button>
                 </Link>
                 <br />
               </div>

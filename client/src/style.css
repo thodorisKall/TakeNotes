@@ -48,6 +48,16 @@ main .notes_box .notes_datetime {
   display: flex;
   justify-content: space-between;
 }
+main .notes_box #delete_btn {
+  border: none;
+  background-color: transparent !important;
+  font-size: 1.2rem;
+  color: #7b1113;
+}
+main .notes_box #delete_btn:hover {
+  cursor: pointer;
+  color: red;
+}
 
 .recent {
   border-right: 0.5px solid #808080;
