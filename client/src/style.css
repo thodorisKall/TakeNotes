@@ -155,4 +155,5 @@ nav .nav_buttons #create_btn {
 .add #save_btn:hover {
   cursor: pointer;
   font-weight: bold;
+  box-shadow: #808080 0px 2px 8px 0px;
 }/*# sourceMappingURL=style.css.map */
