@@ -47,9 +47,9 @@ const Update = () => {
   }
 
   return (
-    <section>
+    <section className='update'>
       <h2>Update Note</h2>
-      <form>
+      <form className='update_form'>
         <input
           type='text'
           placeholder='title of your Note'
@@ -64,8 +64,10 @@ const Update = () => {
           value={selectedNote && selectedNote.text}
           name='text'
         />
+        <button onClick={handleUpdate} id='update_btn'>
+          Update
+        </button>
       </form>
-      <button onClick={handleUpdate}>Update</button>
     </section>
   )
 }
