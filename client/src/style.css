@@ -213,12 +213,22 @@ nav .nav_buttons #create_btn {
   flex-direction: column;
   justify-content: space-around;
   width: 40%;
-  height: 40vh;
+  height: -moz-fit-content;
+  height: fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
   background-color: #f4c430;
   border-radius: 15px;
   padding: 15px;
+}
+.single .single_container h2 {
+  margin-bottom: 1rem;
+}
+.single .single_container p {
+  min-height: 132px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  margin-bottom: 0.5rem;
 }
 .single .single_datetime {
   display: flex;
