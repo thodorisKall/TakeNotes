@@ -31,7 +31,6 @@ const Notes = () => {
 
   return (
     <main>
-      {/* <h1>Notes</h1> */}
       <Recent className='recent_grid' />
 
       <section className='notes'>
