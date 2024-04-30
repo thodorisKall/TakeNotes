@@ -10,7 +10,9 @@ Currently, the project does not have a deployment URL. However, plans are in pla
 
 ## 3. Description:
 
-This web app serves as a platform for users to efficiently manage their notes, offering functionalities such as note creation, deletion, editing, and selective display![MergedImages2](https://github.com/thodorisKall/TakeNotes/assets/105176440/27708bba-4661-43bb-989a-491b91bcf366)
+This web app serves as a platform for users to efficiently manage their notes, offering functionalities such as note creation, deletion, editing, and selective display!
+![5-imageonline co-merged](https://github.com/thodorisKall/TakeNotes/assets/105176440/9e5d8b66-668a-4027-80b0-949a808c4335)
+
 
 
 ## 4. Outcome:
