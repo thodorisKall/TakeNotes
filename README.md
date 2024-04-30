@@ -10,7 +10,8 @@ Currently, the project does not have a deployment URL. However, plans are in pla
 
 ## 3. Description:
 
-This project is a web application developed using React, React Router DOM, JavaScript, Node.js, Express, Sass, and CSS. It serves as a platform for users to manage their notes efficiently, offering functionalities like note creation, deletion, editing, and selective display.
+This web app serves as a platform for users to efficiently manage their notes, offering functionalities such as note creation, deletion, editing, and selective display![MergedImages2](https://github.com/thodorisKall/TakeNotes/assets/105176440/27708bba-4661-43bb-989a-491b91bcf366)
+
 
 ## 4. Outcome:
 
