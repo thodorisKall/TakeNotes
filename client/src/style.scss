@@ -40,7 +40,7 @@ main {
   }
 
   .notes_box {
-    width: fit-content;
+    width: 100%;
     background-color: $mustard;
     border-radius: 20px;
     padding: 1rem 0.8rem;
@@ -51,6 +51,10 @@ main {
     p {
       color: $white;
       margin-bottom: 5px;
+    }
+
+    p {
+      height: 132px;
     }
 
     .notes_datetime {
