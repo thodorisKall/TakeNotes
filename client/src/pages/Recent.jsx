@@ -26,7 +26,7 @@ const Recent = () => {
           return (
             <div className='recent_box' key={note.id}>
               <h4>{note.title}</h4>
-              <h4>{note.text.slice(0, 24) + "..."}</h4>
+              <p>{note.text.slice(0, 24) + "..."}</p>
             </div>
           )
         })}
