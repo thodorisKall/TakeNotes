@@ -40,7 +40,11 @@ const Notes = () => {
               <div className='notes_box' key={note.id}>
                 <Link to={`/notes/${note.id}`}>
                   <h2>{note.title}</h2>
-                  <p>{note.text}</p>
+                  <p>
+                    {note.text.length > 393
+                      ? note.text.slice(0, 394) + "..."
+                      : note.text}
+                  </p>
                   <div className='notes_datetime'>
                     <h4>{note.date_edited.slice(0, 10)}</h4>
                     <h4>{note.time_edited.slice(0, 5)}</h4>
